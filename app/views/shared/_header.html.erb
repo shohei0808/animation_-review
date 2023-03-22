@@ -1,11 +1,11 @@
 <div class="navbar bg-base-100 bg-neutral text-neutral-content">
   <div class="flex-1">
-    <a class="btn btn-ghost normal-case text-xl">アニメレビュー</a>
+    <a class="btn btn-ghost normal-case text-xl"><%= link_to ' アニメレビュー', root_path %></a>
   </div>
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1">
-      <li><a>新規投稿</a></li>
-      <li><a>投稿一覧</a></li>
+      <li><a><%= link_to (t 'posts.new.title'), new_post_path %></a></li>
+      <li><a><%= link_to (t 'posts.index.title'), posts_path %></a></li>
       <li><a>お気に入り</a></li>
       <li tabindex="0">
         <a>

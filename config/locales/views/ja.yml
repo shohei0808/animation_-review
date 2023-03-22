@@ -5,6 +5,8 @@ ja:
     logout: 'ログアウト'
     message:
       require_login: 'ログインしてください'
+      created: "投稿を作成しました"
+      not_created: "投稿を作成できませんでした"
   users:
     new:
       title: 'ユーザー登録'
@@ -26,11 +28,16 @@ ja:
       success: 'ログアウトしました'  
   posts:
     index:
-      title: '掲示板一覧'
+      title: '投稿一覧'
     new:
-      title: '掲示板作成'
+      title: '新規投稿'
     bookmarks:
       title: 'ブックマーク一覧'
   profiles:
     show:
       title: 'プロフィール'
+  time:
+    formats:
+      default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      long: "%Y/%m/%d %H:%M"
+      short: "%m/%d %H:%M"    
