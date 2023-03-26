@@ -3,6 +3,7 @@ ja:
     models:
       user: 'ユーザー'
       post: '投稿'
+      comment: 'コメント'
     attributes:
       user:
         name: '名前'
@@ -15,3 +16,5 @@ ja:
         image: '画像'
         name: "作成者"
         created_at: "作成日時" 
+      comment:
+        body: 'コメント'
