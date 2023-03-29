@@ -8,6 +8,12 @@ ja:
       require_login: 'ログインしてください'
       created: "投稿を作成しました"
       not_created: "投稿を作成できませんでした"
+      comment_created: "コメントを作成しました"
+      not_comment_created: "コメントを作成できませんでした"
+      updated: "投稿を更新しました"
+      not_updated: "投稿を更新できませんでした"
+      deleted: "投稿を削除しました"
+      delete_confirm: '削除しますか？'
   users:
     new:
       title: 'ユーザー登録'
@@ -33,7 +39,9 @@ ja:
     new:
       title: '新規投稿'
     show:
-      title: '掲示板詳細'  
+      title: '投稿詳細'
+    edit:
+      title: '投稿編集'  
     bookmarks:
       title: 'ブックマーク一覧'
   profiles:
