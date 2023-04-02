@@ -6,7 +6,7 @@
     <ul class="menu menu-horizontal px-1">
       <li><a><%= link_to (t 'posts.new.title'), new_post_path %></a></li>
       <li><a><%= link_to (t 'posts.index.title'), posts_path %></a></li>
-      <li><a>お気に入り</a></li>
+      <li><a><%= link_to (t 'posts.bookmarks.title'), bookmarks_posts_path %></a></li>
       <li tabindex="0">
         <a>
         <%= current_user.name %>
