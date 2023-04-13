@@ -10,6 +10,7 @@ ja:
       not_created: "投稿を作成できませんでした"
       comment_created: "コメントを作成しました"
       not_comment_created: "コメントを作成できませんでした"
+      comment_deleted: "コメントを削除しました"
       updated: "投稿を更新しました"
       not_updated: "投稿を更新できませんでした"
       deleted: "投稿を削除しました"
@@ -57,4 +58,11 @@ ja:
     formats:
       default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
       long: "%Y/%m/%d %H:%M"
-      short: "%m/%d %H:%M"    
+      short: "%m/%d %H:%M"
+  views:
+    pagination:
+      first: "<<"
+      last: ">>"
+      previous: "<"
+      next: ">"
+      truncate: "…"    
