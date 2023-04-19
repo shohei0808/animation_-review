@@ -2,29 +2,28 @@
 <div class="container pt-5">
   <div class="row mb-3 w-screen flex justify-center items-center">
     <div class="col-lg-8 offset-lg-2">
-      <h1 class="text-5xl font-bold my-16"><%= t('.title') %></h1>
-      <!-- 掲示板内容 -->
-      <article class="card">
-        <div class="card-body">
-          <div class='row'>
-            <div class='col-md-3'>
-              <%= image_tag @post.image.url, class: 'card-img-top img-fluid', size: '300x200' %>
-            </div>
-            <div class='col-md-9'>
-              <h3 class="d-inline"><%= @post.title %></h3>
-              <%= render 'crud_menus', post: @post if current_user.own?(@post) %>
-              <ul class="list-inline">
-                <li class="list-inline-item">by <%= @post.user.name %></li>
-                <li class="list-inline-item"><%= l @post.created_at, format: :long  %></li>
-              </ul>
-            </div>
-          </div>
-          <%= simple_format(@post.body) %>
+      <h1 class="text-5xl font-bold"><%= t('.title') %></h1>
+      <!-- 掲示板内容 -->   
+      <section class="card max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-10">
+        <div class="p-5">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-400 dark:text-white"><%= link_to @post.title, post_path(@post) %></h5>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><%= @post.user.name %></p>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><%= @post.body %></p>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><%= l @post.created_at, format: :long%></p>
+          <%= render 'crud_menus', post: @post if current_user.own?(@post) %>
+          <% unless current_user.own?(@post) %>   
+            <%= render 'bookmarks/bookmark_button', post: @post  %>
+          <% end %>
+          <%= image_tag @post.image_url, class: 'w-full h-full flex justify-center items-center' %>
+          <div class="p-5" >
+            <% @post.tags.each do |tag| %>
+              <span class="badge"><%= tag.name %></span>
+            <% end %>
+          </div>         
         </div>
-      </article>
+      </section>
     </div>
   </div>
-
   <!-- コメントフォーム -->
   <%= render 'comments/form', { post: @post, comment: @comment } %>
   <!-- コメントエリア -->
