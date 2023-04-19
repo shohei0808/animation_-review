@@ -46,6 +46,8 @@ ja:
     bookmarks:
       title: 'ブックマーク'
       no_result: 'ブックマーク中の投稿がありません。'
+    search_tag:
+      title: 'タグ検索一覧'    
   bookmarks:
     create:
       success: 'ブックマークしました'

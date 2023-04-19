@@ -1,0 +1,19 @@
+<% content_for(:title, t('.title')) %>
+<div class="container pt-5">
+  <!-- 掲示板一覧 -->
+  <div class="row w-screen flex justify-center items-center">
+    <div class="col-12">
+      <div class="row">
+      <h1 class="text-5xl font-bold"><%= t('.title') %></h1>
+        <% if @posts.present? %>
+          <%= render @posts %>
+        <% else %>
+        <p><%= t('.no_result') %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row w-screen flex justify-center items-center">
+    <%= paginate @posts %>
+  </div>
+</div>

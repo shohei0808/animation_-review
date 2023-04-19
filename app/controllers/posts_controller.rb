@@ -45,6 +45,13 @@ class PostsController < ApplicationController
     @bookmark_posts = current_user.bookmark_posts.includes(:user).order(created_at: :desc).page(params[:page])
   end 
 
+  def search_tag
+    #検索されたタグを受け取る
+    @tag=Tag.find(params[:tag_id])
+    #検索されたタグに紐づく投稿を表示
+    @posts=@tag.posts.order(created_at: :desc).page(params[:page]).per(8)
+  end
+
   private
 
   def find_post

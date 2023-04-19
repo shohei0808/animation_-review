@@ -17,7 +17,7 @@
           <%= image_tag @post.image_url, class: 'w-full h-full flex justify-center items-center' %>
           <div class="p-5" >
             <% @post.tags.each do |tag| %>
-              <span class="badge"><%= tag.name %></span>
+              <span class="badge"><%= link_to tag.name,search_tag_path(tag_id: tag.id)%></span>
             <% end %>
           </div>         
         </div>
