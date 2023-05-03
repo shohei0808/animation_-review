@@ -1,6 +1,9 @@
 {
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",
-    "daisyui": "^2.51.3"
+    "daisyui": "^2.51.3",
+    "jquery": "^3.6.4",
+    "raty": "^1.0.5",
+    "raty-js": "^4.1.0"
   }
 }

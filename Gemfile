@@ -10,6 +10,8 @@ gem 'pry-byebug'
 gem 'rails-i18n'
 gem 'carrierwave', '2.2.3'
 gem 'kaminari'
+gem 'jquery-rails'
+gem 'ransack'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 

@@ -1,5 +1,5 @@
-onchange = function previewImage() {
-    const target = this.event.target;
+onchange = function previewImage(event) {
+    const target = event.target;
     const file = target.files[0];
     const reader  = new FileReader();
     reader.onloadend = function () {
