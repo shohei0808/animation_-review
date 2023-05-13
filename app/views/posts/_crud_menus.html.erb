@@ -1,8 +1,8 @@
 <ul class='crud-menu-btn list-inline float-right flex'>
   <li class="list-inline-item">
-    <button class="btn btn-primary"><%= link_to "編集", edit_post_path(post), id: "button-edit-#{post.id}"%></button>
+    <button class="btn"><%= link_to "編集", edit_post_path(post), id: "button-edit-#{post.id}"%></button>
   </li>
   <li class="list-inline-item">
-    <button class="btn btn-primary"><%= link_to "削除", post_path(post), id: "button-delete-#{post.id}", data: {turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm')} %></button>
+    <button class="btn"><%= link_to "削除", post_path(post), id: "button-delete-#{post.id}", data: {turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm')} %></button>
   </li>
 </ul>
