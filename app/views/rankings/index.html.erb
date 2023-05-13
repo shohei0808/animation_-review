@@ -1,0 +1,7 @@
+<h1>アニメ名の投稿数ランキング</h1>
+
+<ol>
+  <% @ranking.each_with_index do |(anime_name, count), index| %>
+    <li><%= "#{index + 1}. #{anime_name} (#{count}件)" %></li>
+  <% end %>
+</ol>

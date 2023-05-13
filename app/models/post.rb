@@ -16,5 +16,9 @@ class Post < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     ["bookmarks", "comments", "taggings", "tags", "user"]
   end
+
+  def self.ranking
+    group(:title).order('count_all DESC').count
+  end
   
 end
