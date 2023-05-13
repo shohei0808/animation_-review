@@ -1,18 +1,22 @@
 <% content_for(:title, t('.title')) %>
-<div class="container pt-3">
+<div class="min-h-screen bg-gray-400  text-black pt-10">
+  <h1 class="text-4xl font-bold flex justify-center"><%= t '.title' %></h1>
   <!-- 掲示板一覧 -->
-  <div class="row w-screen flex justify-center items-center">
-    <div class="col-12">
-      <div class="row">
-        <h1 class="text-5xl font-bold my-16"><%= t '.title' %></h1>
-        <% if @bookmark_posts.present? %>
+  <div class="flex justify-center pt-4">
+    <div class="col-12">   
+      <% if @bookmark_posts.present? %>
+        <div class="grid grid-cols-4 gap-4">
           <%= render @bookmark_posts %>
-        <% else %>
+        </div>
+      <% else %>
+        <div class="flex justify-center pt-20 font-bold">
           <p><%= t('.no_result') %></p>
-        <% end %>
+        </div>
+      <% end %>
       </div>
     </div>
   </div>
+
   <div class="row w-screen flex justify-center items-center">
     <%= paginate @bookmark_posts %>
   </div>

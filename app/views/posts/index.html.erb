@@ -1,19 +1,23 @@
 <% content_for(:title, t('.title')) %>
-<div class="container pt-3">
+<div class="pt-10 min-h-screen bg-gray-400">
+  <div class="row w-screen flex justify-center">
+    <%= render 'shared/search_form', q: @q, url: posts_path %>
+  </div>
   <!-- 掲示板一覧 -->
-  <div class="row w-screen flex justify-center items-center">
+  <div class="flex justify-center pt-4">
     <div class="col-12">
-      <div class="row">
-      <%= render 'shared/search_form', q: @q, url: posts_path %>
-        <% if @posts.present? %>
+      <% if @posts.present? %>
+        <div class="grid grid-cols-4 gap-4">
           <%= render @posts %>
-        <% else %>
-        <p><%= t('.no_result') %></p>
-        <% end %>
-      </div>
+        </div>  
+      <% else %>
+        <div class="flex justify-center pt-20 font-bold">
+          <p><%= t('.no_result') %></p>
+        </div>
+      <% end %>
     </div>
   </div>
-  <div class="row w-screen flex justify-center items-center">
+  <div class="row w-screen flex justify-center items-center text-black">
     <%= paginate @posts %>
   </div>
 </div>

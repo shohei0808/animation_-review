@@ -32,8 +32,8 @@ ja:
     new:
       email: 'メールアドレス'
       title: 'ログイン'
-      to_register_page: '登録ページへ'
-      password_forget: 'パスワードをお忘れの方はこちら'
+      to_register_page: 'ユーザー登録の方は こちら'
+      password_forget: 'パスワードをお忘れの方は こちら'
     create:
       success: 'ログインしました'
       fail: 'ログインに失敗しました'
@@ -53,6 +53,8 @@ ja:
       no_result: 'ブックマーク中の投稿がありません。'
     search_tag:
       title: 'タグ検索一覧'    
+    rankings:
+      title: 'ランキング'    
   bookmarks:
     create:
       success: 'ブックマークしました'

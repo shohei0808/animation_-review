@@ -12,9 +12,9 @@ ja:
         password_confirmation: 'パスワード確認'
         avatar: 'プロフィール画像'
       post:
-        title: 'タイトル'
-        body: '本文'  
-        image: '画像'
+        title: 'アニメ名'
+        body: '感想'  
+        image: 'アニメ画像'
         name: "作成者"
         created_at: "作成日時" 
       comment:
