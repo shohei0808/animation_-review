@@ -1,7 +1,34 @@
-<h1>アニメ名の投稿数ランキング</h1>
+<% content_for(:title, t('.title')) %>
+<div class="container">
+  <div class="row w-screen flex justify-center items-center bg-gray-400 text-black">
+    <div class="col-lg-8 offset-lg-2">
+      <h1 class="text-4xl font-bold my-12 flex justify-center"><%= t '.title' %></h1>
 
-<ol>
-  <% @ranking.each_with_index do |(anime_name, count), index| %>
-    <li><%= "#{index + 1}. #{anime_name} (#{count}件)" %></li>
-  <% end %>
-</ol>
+      <ol class="text-xl">
+      <% @ranking.take(10).each_with_index do |(anime_name, count), index| %>
+        <% rank = index + 1 %>
+        <li class="<%= rank <= 3 ? 'special-rank' : '' %>">
+          <%= link_to posts_path(anime_name: anime_name) do %>
+            <div class="flex items-center">
+              <% if rank <= 3 %>
+                <%= image_tag rank_image(rank), alt: "Rank #{rank}", class: 'w-16 h-16 inline-block mr-2' %>
+              <% else %>
+                <span class="rank-number text-4xl" style="padding-left: 20px;"><%= "#{rank}" %></span>
+              <% end %>
+              <span class="<%= rank <= 3 ? 'rank-text' : '' %>" style="margin-top: 18px; margin-bottom: 14px; margin-left: 60px; font-size: 24px;">
+                <%= "#{anime_name} (#{count}件)" %>
+              </span>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ol>
+    
+
+    
+
+
+      
+    </div>
+  </div>
+</div>
