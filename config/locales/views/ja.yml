@@ -27,7 +27,7 @@ ja:
       to_login_page: 'ログインページへ'
     create:
       success: 'ユーザー登録が完了しました'
-      fail: 'ユーザー登録に失敗しました'  
+      fail: 'ユーザー登録に失敗しました'
   user_sessions:
     new:
       email: 'メールアドレス'
@@ -38,7 +38,7 @@ ja:
       success: 'ログインしました'
       fail: 'ログインに失敗しました'
     destroy:
-      success: 'ログアウトしました'  
+      success: 'ログアウトしました'
   posts:
     index:
       title: '投稿一覧'
@@ -47,24 +47,27 @@ ja:
     show:
       title: '投稿詳細'
     edit:
-      title: '投稿編集'  
+      title: '投稿編集'
     bookmarks:
       title: 'ブックマーク'
       no_result: 'ブックマーク中の投稿がありません。'
     search_tag:
-      title: 'タグ検索一覧'    
+      title: 'タグ検索一覧'
     rankings:
-      title: 'ランキング'    
+      title: 'ランキング'
   bookmarks:
     create:
       success: 'ブックマークしました'
     destroy:
-      success: 'ブックマークを外しました'    
+      success: 'ブックマークを外しました'
   profiles:
     show:
       title: 'プロフィール'
     edit:
       title: 'プロフィール編集'
+  rankings:
+    index:
+      title: 'アニメ投稿数ランキング'
   password_resets:
     new:
       title: 'パスワードリセット申請'
@@ -75,7 +78,7 @@ ja:
       success: 'パスワードリセット手順を送信しました'
     update:
       success: 'パスワードを変更しました'
-      fail: 'パスワードの変更に失敗しました'      
+      fail: 'パスワードの変更に失敗しました'
   time:
     formats:
       default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
@@ -87,4 +90,4 @@ ja:
       last: ">>"
       previous: "<"
       next: ">"
-      truncate: "…"    
+      truncate: "…"
