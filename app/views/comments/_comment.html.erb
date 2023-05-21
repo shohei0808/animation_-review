@@ -1,24 +1,23 @@
-<tr id="comment-<%= comment.id %>">
+<tr id="comment-<%= comment.id %>" class="border-b-2 border-black">
   <td style="width: 80px">
-    <%= image_tag comment.user.avatar_url, size: '40x40', class: 'rounded-circle mr15'%>
+    <%= image_tag comment.user.avatar_url, size: '30x30', class: 'w-10 h-10 rounded-full overflow-hidden' %>
   </td>
-  <td>
-    <h3 class="small"><%= comment.user.name %></h3>
-    <div id="js-comment-<%= comment.id %>">
-      <%= simple_format(comment.body) %>
-    </div>
-    <div id="js-textarea-comment-box-<%= comment.id %>" style="display: none;">
-      <textarea id="js-textarea-comment-<%= comment.id %>" class="form-control mb-1"><%= comment.body %></textarea>
+  <td class="w-[300px] max-w-[300px] relative"> 
+    <div class="flex flex-col h-full">
+      <h3 class="small font-bold"><%= comment.user.name %></h3>
+      <div id="js-comment-<%= comment.id %>" class="overflow-wrap-break-word flex-grow">
+        <div style="word-break: break-all; white-space: pre-wrap;" class="mb-6">
+          <%= simple_format(comment.body) %>
+        </div>
+      </div>
+      <div id="js-textarea-comment-box-<%= comment.id %>" style="display: none;">
+        <textarea id="js-textarea-comment-<%= comment.id %>" class="form-control"><%= comment.body %></textarea>
+      </div>
+      <% if current_user.own?(comment) %>
+        <div class="absolute bottom-2 right-2">
+          <button class="btn btn-sm"><%= link_to "削除", comment_path(comment), data: {turbo_method: :delete}, id: "button-delete-#{comment.id}" %></button>
+        </div>
+      <% end %>
     </div>
   </td>
-
-  <% if current_user.own?(comment) %>
-    <td class="action">
-      <ul class="list-inline justify-content-center" style="float: right;">
-        <li class="list-inline-item">
-          <button class="btn"><%= link_to "削除", comment_path(comment), data: {turbo_method: :delete}, id: "button-delete-#{comment.id}" %></button>
-        </li>
-      </ul>
-    </td>
-  <% end %>
 </tr>
