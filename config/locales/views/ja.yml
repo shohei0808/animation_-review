@@ -42,6 +42,7 @@ ja:
   posts:
     index:
       title: '投稿一覧'
+      no_result: '検索結果はありません'
     new:
       title: '新規投稿'
     show:
@@ -50,7 +51,7 @@ ja:
       title: '投稿編集'
     bookmarks:
       title: 'ブックマーク'
-      no_result: 'ブックマーク中の投稿がありません。'
+      no_result: 'ブックマーク中の投稿がありません'
     search_tag:
       title: 'タグ検索一覧'
     rankings:

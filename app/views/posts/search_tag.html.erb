@@ -1,16 +1,18 @@
 <% content_for(:title, t('.title')) %>
-<div class="container pt-5">
+<div class="pt-8 min-h-screen bg-gray-400">
   <!-- 掲示板一覧 -->
-  <div class="row w-screen flex justify-center items-center">
+  <div class="row w-screen flex justify-center">
     <div class="col-12">
-      <div class="row">
-      <h1 class="text-5xl font-bold"><%= t('.title') %></h1>
-        <% if @posts.present? %>
+      <h1 class="text-4xl font-bold flex justify-center pt-4"><%= t('.title') %></h1>
+      <% if @posts.present? %>
+        <div class="grid grid-cols-4 gap-4">
           <%= render @posts %>
-        <% else %>
-        <p><%= t('.no_result') %></p>
-        <% end %>
-      </div>
+        </div>  
+      <% else %>
+        <div class="flex justify-center pt-20 font-bold">
+          <p><%= t('.no_result') %></p>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="row w-screen flex justify-center items-center">
