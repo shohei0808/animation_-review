@@ -6,15 +6,28 @@
       <!-- 掲示板内容 -->   
       <section class="card max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-10">
         <div class="p-5">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-black"><%= link_to @post.title, post_path(@post) %></h5>
-          <p class="mb-3 font-normal text-black"><%= @post.user.name %></p>
-          <p class="mb-3 font-normal text-black"><%= @post.body %></p>
-          <p class="mb-3 font-normal text-black"><%= l @post.created_at, format: :long%></p>
-          <%= render 'crud_menus', post: @post if current_user.own?(@post) %>
-          <% unless current_user.own?(@post) %>   
-            <%= render 'bookmarks/bookmark_button', post: @post  %>
-          <% end %>
           <%= image_tag @post.image_url, class: 'w-full h-full flex justify-center items-center' %>
+          <h5 class="my-8 text-3xl font-bold flex justify-center"><%= link_to @post.title, post_path(@post) %></h5>
+          <p class="my-8 text-2xl"><%= @post.body %></p>
+
+          <div class="flex items-center my-2">
+            <div class="w-10 h-10 rounded-full overflow-hidden mr-4">
+              <%= image_tag @post.user.avatar_url, size: '40x40', class: 'mr-15' %>
+            </div>
+            <div class="flex-grow">
+              <p class="mb-1"><%= @post.user.name %></p>
+            </div>
+            <% unless current_user.own?(@post) %>
+              <div class="ml-auto mb-1">
+                <%= render 'bookmarks/bookmark_button', post: @post %>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <p class="pr-16"><%= l @post.created_at, format: :long %></p>
+            <%= render 'crud_menus', post: @post if current_user.own?(@post) %>
+          </div>
           <div class="p-5" >
             <% @post.tags.each do |tag| %>
               <span class="badge"><%= link_to tag.name,search_tag_path(tag_id: tag.id)%></span>
