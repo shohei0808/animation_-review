@@ -80,3 +80,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+gem 'fog-aws'
+gem 'dotenv-rails'
+gem "dockerfile-rails", ">= 1.4", :group => :development

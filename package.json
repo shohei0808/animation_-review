@@ -5,5 +5,6 @@
     "jquery": "^3.6.4",
     "raty": "^1.0.5",
     "raty-js": "^4.1.0"
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }
